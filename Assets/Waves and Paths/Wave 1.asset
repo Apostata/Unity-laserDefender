@@ -16,7 +16,7 @@ MonoBehaviour:
   moveSpeed: 3
   enemies:
   - {fileID: 8699121044873391012, guid: bdfa575fb5741ed44a56576636423c23, type: 3}
-  - {fileID: 8699121044873391012, guid: bdfa575fb5741ed44a56576636423c23, type: 3}
+  - {fileID: 8699121044873391012, guid: 089ed3483ddead34487bc82865591d2e, type: 3}
   - {fileID: 8699121044873391012, guid: bdfa575fb5741ed44a56576636423c23, type: 3}
   timeBettweenSpawns: 1
   spanwTimeVariance: 0.7

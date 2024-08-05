@@ -6,11 +6,11 @@ public class EnemySpawner : MonoBehaviour
 {
     [SerializeField] List<WaveConfigSO> waves;
     [SerializeField] float timeBettweenWaves = 0f;
+    [SerializeField] bool isLooping = false;
     WaveConfigSO currentWave;
     public WaveConfigSO CurrentWave { get => currentWave; }
     void Start()
     {
-        // StartCoroutine(SpawnEnemies());
         StartCoroutine(StartWaves());
     }
 
@@ -18,7 +18,7 @@ public class EnemySpawner : MonoBehaviour
     {
         for (int i = 0; i < currentWave.NumberOfEnemies; i++)
         {
-           Instantiate(
+        Instantiate(
             currentWave.GetEnemy(i), 
             currentWave.GetStartingWaypoint.position,
             Quaternion.identity, // No rotation
@@ -26,15 +26,20 @@ public class EnemySpawner : MonoBehaviour
             );
             yield return new WaitForSeconds(currentWave.GetSpanwTime());
         }
+       
+        
     }
 
     IEnumerator StartWaves()
     {
-        foreach (WaveConfigSO wave in waves)
-        {
-            currentWave = wave;
-            yield return StartCoroutine(SpawnEnemies());
-            yield return new WaitForSeconds(timeBettweenWaves);
-        }
+        do{
+            foreach (WaveConfigSO wave in waves)
+            {
+                currentWave = wave;
+                yield return StartCoroutine(SpawnEnemies());
+                yield return new WaitForSeconds(timeBettweenWaves);
+            }
+        } 
+        while (isLooping);
     }
 }

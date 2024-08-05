@@ -247,7 +247,8 @@ MonoBehaviour:
   waves:
   - {fileID: 11400000, guid: 16cb2c44859fd484089aed2a6670a6b0, type: 2}
   - {fileID: 11400000, guid: 4c13020b8540dba40a4d03c53f7b0ff1, type: 2}
-  timeBettweenWaves: 0
+  timeBettweenWaves: 1
+  isLooping: 1
 --- !u!4 &941924205
 Transform:
   m_ObjectHideFlags: 0
@@ -320,7 +321,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 982989231
   m_SortingLayer: 1
-  m_SortingOrder: 0
+  m_SortingOrder: -1
   m_Sprite: {fileID: 21300000, guid: 097dae8a420dda144964d29771f5f5b7, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -387,29 +388,13 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 782507951733484910, guid: 24d57d03b0128a8499f6e827e67cb47c, type: 3}
-      propertyPath: speed
-      value: 5
-      objectReference: {fileID: 0}
-    - target: {fileID: 782507951733484910, guid: 24d57d03b0128a8499f6e827e67cb47c, type: 3}
-      propertyPath: paddingTop
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 782507951733484910, guid: 24d57d03b0128a8499f6e827e67cb47c, type: 3}
-      propertyPath: paddingBottomForUI
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 782507951733484910, guid: 24d57d03b0128a8499f6e827e67cb47c, type: 3}
-      propertyPath: maxReachPercentageOfScreen
-      value: 60
-      objectReference: {fileID: 0}
     - target: {fileID: 7094676411581443969, guid: 24d57d03b0128a8499f6e827e67cb47c, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0
+      value: 0.03
       objectReference: {fileID: 0}
     - target: {fileID: 7094676411581443969, guid: 24d57d03b0128a8499f6e827e67cb47c, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -3.26
+      value: -3.34
       objectReference: {fileID: 0}
     - target: {fileID: 7094676411581443969, guid: 24d57d03b0128a8499f6e827e67cb47c, type: 3}
       propertyPath: m_LocalPosition.z
