@@ -19,9 +19,11 @@ public class Shooter : MonoBehaviour
     Coroutine firingCoroutine;
 
     Vector3 projectileDirection;
+    AudioPlayer audioPlayer;
 
     void Awake()
     {
+        audioPlayer = FindObjectOfType<AudioPlayer>();
         string layerName = LayerMask.LayerToName(gameObject.layer);
         projectileDirection = layerName == "Player" ? transform.up : transform.up * -1;
     }
@@ -66,6 +68,7 @@ public class Shooter : MonoBehaviour
                 rigidbody.velocity = projectileDirection * projectileSpeed;
             }
             Destroy(projectile, projectileDuration);
+            audioPlayer.PlayShootingClip();
             yield return new WaitForSeconds(timeBetweenProjectile);
            
         }
